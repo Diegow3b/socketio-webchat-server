@@ -8,11 +8,8 @@ var user;
 
 io.on('connection', function(socket) {       
     console.log('User Connected');
-    socket.on('message', function(msg){
-        io.emit('message', msg);
-    });
-    socket.on('user', function(user){        
-        this.user = user;   
+    socket.on('data', function(data){
+        io.emit('data', data);             
     });
 });
 
